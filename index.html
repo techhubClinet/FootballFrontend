@@ -9744,7 +9744,11 @@ function normalizeApiBase(raw) {
 }
 const API_BASE = normalizeApiBase(
   window.FOOTBALL_API_BASE ||
-  (window.location && window.location.protocol === 'file:' ? 'http://localhost:4001' : '')
+  (
+    window.location && window.location.protocol === 'file:'
+      ? 'http://localhost:4001'
+      : 'https://football-backend-seven.vercel.app'
+  )
 );
 window.FOOTBALL_API_BASE = API_BASE;
 function apiUrl(path) {
